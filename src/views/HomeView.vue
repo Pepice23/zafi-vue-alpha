@@ -1,25 +1,13 @@
 <template>
   <div class="text-center container">
     <h1 class="text-success">Zafi És Az I.N.F.</h1>
-    <button class="btn btn-primary m-1" @click="decrement">-</button>
-    <span>{{ counter }}</span>
-    <button class="btn btn-primary m-1" @click="increment">+</button>
+    <GenderSelection />
   </div>
 </template>
 
 <!--Composition API with script setup (Recommended)-->
 <script setup>
-import { ref } from "vue";
-
-const counter = ref(0);
-//increment function  - increment the counter by 1
-const increment = () => {
-  counter.value++;
-};
-//decrement function  - decrement the counter by 1
-const decrement = () => {
-  counter.value--;
-};
+import GenderSelection from "../components/GenderSelection.vue";
 </script>
 
 <!-- Composition API with setup function
