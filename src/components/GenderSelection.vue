@@ -3,7 +3,7 @@
     <div class="col">
       <button
         class="btn m-1"
-        @click="newCharacterStore.setGender('Male')"
+        @click="selectedGender('Male')"
         :class="newCharacterStore.gender === 'Male' ? 'btn-success' : ''"
       >
         <figure>
@@ -13,7 +13,7 @@
       </button>
       <button
         class="btn m-1"
-        @click="newCharacterStore.setGender('Female')"
+        @click="selectedGender('Female')"
         :class="newCharacterStore.gender === 'Female' ? 'btn-success' : ''"
       >
         <figure>
@@ -29,6 +29,12 @@
 import { useNewCharacterStore } from "../stores/newCharacterStore.js";
 
 const newCharacterStore = useNewCharacterStore();
+
+const selectedGender = (gender) => {
+  newCharacterStore.setGender(gender);
+  newCharacterStore.resetRace();
+  newCharacterStore.resetPlayerClass();
+};
 </script>
 
 <style scoped></style>

@@ -3,7 +3,7 @@
     <div class="col">
       <button
         class="btn m-1"
-        @click="newCharacterStore.setRace(race)"
+        @click="selectRace(race)"
         :class="newCharacterStore.race === race ? 'btn-success' : ''"
       >
         <figure>
@@ -19,6 +19,11 @@
 import { useNewCharacterStore } from "../stores/newCharacterStore";
 const props = defineProps(["raceList"]);
 const newCharacterStore = useNewCharacterStore();
+
+const selectRace = (race) => {
+  newCharacterStore.setRace(race);
+  newCharacterStore.resetPlayerClass();
+};
 </script>
 
 <style scoped></style>
