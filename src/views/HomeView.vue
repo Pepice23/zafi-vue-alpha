@@ -17,6 +17,9 @@ import { hordeFemales, hordeMales } from "../helpers/horde.js";
 
 const newCharacterStore = useNewCharacterStore();
 
+let alliance = ref([]);
+let horde = ref([]);
+
 newCharacterStore.$subscribe((mutation, state) => {
   if (state.gender === "Male") {
     alliance.value = allianceMales;
@@ -27,8 +30,6 @@ newCharacterStore.$subscribe((mutation, state) => {
     horde.value = hordeFemales;
   }
 });
-let alliance = ref([]);
-let horde = ref([]);
 </script>
 
 <!-- Composition API with setup function
