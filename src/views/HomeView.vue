@@ -7,7 +7,22 @@
   </div>
 </template>
 
-<!-- Composition API -->
+<!--Composition API with script setup (Recommended)-->
+<script setup>
+import { ref } from "vue";
+
+const counter = ref(0);
+//increment function  - increment the counter by 1
+const increment = () => {
+  counter.value++;
+};
+//decrement function  - decrement the counter by 1
+const decrement = () => {
+  counter.value--;
+};
+</script>
+
+<!-- Composition API with setup function
 <script>
 import { ref } from "vue";
 
@@ -25,6 +40,7 @@ export default {
   },
 };
 </script>
+-->
 
 <!-- Options API
 <script>
