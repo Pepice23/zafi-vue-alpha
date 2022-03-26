@@ -2,12 +2,33 @@
   <div class="text-center container">
     <h1 class="text-success">Zafi És Az I.N.F.</h1>
     <GenderSelection />
+    <RaceList :race-list="alliance" />
   </div>
 </template>
 
 <!--Composition API with script setup (Recommended)-->
 <script setup>
 import GenderSelection from "../components/GenderSelection.vue";
+import RaceList from "../components/RaceList.vue";
+import { allianceFemales, allianceMales } from "../helpers/alliance.js";
+import { ref } from "vue";
+import { useNewCharacterStore } from "../stores/newCharacterStore";
+import { hordeFemales, hordeMales } from "../helpers/horde.js";
+
+const newCharacterStore = useNewCharacterStore();
+
+newCharacterStore.$subscribe((mutation, state) => {
+  if (state.gender === "Male") {
+    alliance.value = allianceMales;
+    horde.value = hordeMales;
+  }
+  if (state.gender === "Female") {
+    alliance.value = allianceFemales;
+    horde.value = hordeFemales;
+  }
+});
+let alliance = ref([]);
+let horde = ref([]);
 </script>
 
 <!-- Composition API with setup function
