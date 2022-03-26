@@ -13,6 +13,16 @@
         <RaceList :race-list="horde" />
       </div>
     </div>
+    <div class="row">
+      <table>
+        <tr>
+          <td>{{ newCharacterStore.faction }}</td>
+          <td>{{ newCharacterStore.gender }}</td>
+          <td>{{ newCharacterStore.race.raceName }}</td>
+          <td>{{ newCharacterStore.playerClass.className }}</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 
