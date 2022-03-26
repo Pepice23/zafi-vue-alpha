@@ -2,7 +2,17 @@
   <div class="text-center container">
     <h1 class="text-success">Zafi És Az I.N.F.</h1>
     <GenderSelection />
-    <RaceList :race-list="alliance" />
+    <div class="row">
+      <div class="col">
+        <RaceList :race-list="alliance" />
+      </div>
+      <div class="col">
+        <ClassList :class-list="newCharacterStore.race.availableClasses" />
+      </div>
+      <div class="col">
+        <RaceList :race-list="horde" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,6 +24,7 @@ import { allianceFemales, allianceMales } from "../helpers/alliance.js";
 import { ref } from "vue";
 import { useNewCharacterStore } from "../stores/newCharacterStore";
 import { hordeFemales, hordeMales } from "../helpers/horde.js";
+import ClassList from "../components/ClassList.vue";
 
 const newCharacterStore = useNewCharacterStore();
 
