@@ -1,10 +1,11 @@
 import { defineStore } from "pinia";
 
 export const useNewCharacterStore = defineStore({
-  id: "newCharacter",
+  id: "newCharacterStore",
   state: () => ({
     gender: "",
     race: {},
+    playerClass: {},
   }),
   getters: {},
   actions: {
@@ -13,6 +14,15 @@ export const useNewCharacterStore = defineStore({
     },
     setRace(race) {
       this.race = race;
+    },
+    resetRace() {
+      this.race = {};
+    },
+    setPlayerClass(cls) {
+      this.playerClass = cls;
+    },
+    resetPlayerClass() {
+      this.playerClass = {};
     },
   },
 });
