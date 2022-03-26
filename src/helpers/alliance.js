@@ -19,7 +19,7 @@ const humanM = {
   faction: "Alliance",
   raceName: "Human",
   gender: "Male",
-  imgPath: "assets/race-icons/human_male.png",
+  imgPath: "src/assets/race-icons/human_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -37,7 +37,7 @@ const humanF = {
   faction: "Alliance",
   raceName: "Human",
   gender: "Male",
-  imgPath: "assets/race-icons/human_female.png",
+  imgPath: "src/assets/race-icons/human_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -55,7 +55,7 @@ const dwarfM = {
   faction: "Alliance",
   raceName: "Dwarf",
   gender: "Male",
-  imgPath: "assets/race-icons/dwarf_male.png",
+  imgPath: "src/assets/race-icons/dwarf_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -74,7 +74,7 @@ const dwarfF = {
   faction: "Alliance",
   raceName: "Dwarf",
   gender: "Male",
-  imgPath: "assets/race-icons/dwarf_female.png",
+  imgPath: "src/assets/race-icons/dwarf_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -93,7 +93,7 @@ const nightElfM = {
   faction: "Alliance",
   raceName: "Night Elf",
   gender: "Male",
-  imgPath: "assets/race-icons/night_elf_male.png",
+  imgPath: "src/assets/race-icons/night_elf_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -111,7 +111,7 @@ const nightElfF = {
   faction: "Alliance",
   raceName: "Night Elf",
   gender: "Female",
-  imgPath: "assets/race-icons/night_elf_female.png",
+  imgPath: "src/assets/race-icons/night_elf_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -130,7 +130,7 @@ const gnomeM = {
   faction: "Alliance",
   raceName: "Gnome",
   gender: "Male",
-  imgPath: "assets/race-icons/gnome_male.png",
+  imgPath: "src/assets/race-icons/gnome_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -147,7 +147,7 @@ const gnomeF = {
   faction: "Alliance",
   raceName: "Gnome",
   gender: "Female",
-  imgPath: "assets/race-icons/gnome_female.png",
+  imgPath: "src/assets/race-icons/gnome_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -164,7 +164,7 @@ const draeneiM = {
   faction: "Alliance",
   raceName: "Draenei",
   gender: "Male",
-  imgPath: "assets/race-icons/draenei_male.png",
+  imgPath: "src/assets/race-icons/draenei_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -181,7 +181,7 @@ const draeneiF = {
   faction: "Alliance",
   raceName: "Draenei",
   gender: "Female",
-  imgPath: "assets/race-icons/draenei_female.png",
+  imgPath: "src/assets/race-icons/draenei_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -198,7 +198,7 @@ const worgenM = {
   faction: "Alliance",
   raceName: "Worgen",
   gender: "Male",
-  imgPath: "assets/race-icons/worgen_male.png",
+  imgPath: "src/assets/race-icons/worgen_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -216,7 +216,7 @@ const worgenF = {
   faction: "Alliance",
   raceName: "Worgen",
   gender: "Female",
-  imgPath: "assets/race-icons/worgen_female.png",
+  imgPath: "src/assets/race-icons/worgen_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -234,7 +234,7 @@ const voidElfM = {
   faction: "Alliance",
   raceName: "Void Elf",
   gender: "Male",
-  imgPath: "assets/race-icons/void_elf_male.png",
+  imgPath: "src/assets/race-icons/void_elf_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -251,7 +251,7 @@ const voidElfF = {
   faction: "Alliance",
   raceName: "Void Elf",
   gender: "Female",
-  imgPath: "assets/race-icons/void_elf_female.png",
+  imgPath: "src/assets/race-icons/void_elf_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -268,7 +268,7 @@ const lightforgedM = {
   faction: "Alliance",
   raceName: "Lightforged Draenei",
   gender: "Male",
-  imgPath: "assets/race-icons/lightforged_male.png",
+  imgPath: "src/assets/race-icons/lightforged_male.png",
   availableClasses: [warrior, hunter, deathKnight, mage, priest, paladin],
 };
 const lightforgedF = {
@@ -276,7 +276,7 @@ const lightforgedF = {
   faction: "Alliance",
   raceName: "Lightforged Draenei",
   gender: "Female",
-  imgPath: "assets/race-icons/lightforged_female.png",
+  imgPath: "src/assets/race-icons/lightforged_female.png",
   availableClasses: [warrior, hunter, deathKnight, mage, priest, paladin],
 };
 const darkIronM = {
@@ -284,7 +284,7 @@ const darkIronM = {
   faction: "Alliance",
   raceName: "Dark Iron Dwarf",
   gender: "Male",
-  imgPath: "assets/race-icons/dark_iron_male.png",
+  imgPath: "src/assets/race-icons/dark_iron_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -303,7 +303,7 @@ const darkIronF = {
   faction: "Alliance",
   raceName: "Dark Iron Dwarf",
   gender: "Female",
-  imgPath: "assets/race-icons/dark_iron_female.png",
+  imgPath: "src/assets/race-icons/dark_iron_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -322,7 +322,7 @@ const kultiranM = {
   faction: "Alliance",
   raceName: "Kul Tiran Human",
   gender: "Male",
-  imgPath: "assets/race-icons/kultiran_male.png",
+  imgPath: "src/assets/race-icons/kultiran_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -340,7 +340,7 @@ const kultiranF = {
   faction: "Alliance",
   raceName: "Kul Tiran Human",
   gender: "Female",
-  imgPath: "assets/race-icons/kultiran_female.png",
+  imgPath: "src/assets/race-icons/kultiran_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -358,7 +358,7 @@ const mechagnomeM = {
   faction: "Alliance",
   raceName: "Mechagnome",
   gender: "Male",
-  imgPath: "assets/race-icons/mechagnome_male.png",
+  imgPath: "src/assets/race-icons/mechagnome_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -375,7 +375,7 @@ const mechagnomeF = {
   faction: "Alliance",
   raceName: "Mechagnome",
   gender: "Male",
-  imgPath: "assets/race-icons/mechagnome_female.png",
+  imgPath: "src/assets/race-icons/mechagnome_female.png",
   availableClasses: [
     warrior,
     hunter,
@@ -392,7 +392,7 @@ const aPandarenM = {
   faction: "Alliance",
   raceName: "Pandaren",
   gender: "Male",
-  imgPath: "assets/race-icons/pandaren_male.png",
+  imgPath: "src/assets/race-icons/pandaren_male.png",
   availableClasses: [
     warrior,
     hunter,
@@ -410,7 +410,7 @@ const aPandarenF = {
   faction: "Alliance",
   raceName: "Pandaren",
   gender: "Female",
-  imgPath: "assets/race-icons/pandaren_female.png",
+  imgPath: "src/assets/race-icons/pandaren_female.png",
   availableClasses: [
     warrior,
     hunter,
