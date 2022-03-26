@@ -23,6 +23,7 @@ const newCharacterStore = useNewCharacterStore();
 const selectRace = (race) => {
   newCharacterStore.setRace(race);
   newCharacterStore.resetPlayerClass();
+  newCharacterStore.setFaction(race.faction);
 };
 </script>
 

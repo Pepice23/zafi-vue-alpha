@@ -32,6 +32,7 @@ const newCharacterStore = useNewCharacterStore();
 
 const selectedGender = (gender) => {
   newCharacterStore.setGender(gender);
+  newCharacterStore.resetFaction();
   newCharacterStore.resetRace();
   newCharacterStore.resetPlayerClass();
 };
