@@ -1,94 +1,13 @@
 <template>
   <div class="text-center container">
     <h1 class="text-success">Zafi És Az I.N.F.</h1>
-    <GenderSelection />
-    <div class="row">
-      <div class="col">
-        <RaceList :race-list="alliance" />
-      </div>
-      <div class="col">
-        <ClassList :class-list="newCharacterStore.race.availableClasses" />
-      </div>
-      <div class="col">
-        <RaceList :race-list="horde" />
-      </div>
-    </div>
-    <div class="row">
-      <table>
-        <tr>
-          <td>{{ newCharacterStore.faction }}</td>
-          <td>{{ newCharacterStore.gender }}</td>
-          <td>{{ newCharacterStore.race.raceName }}</td>
-          <td>{{ newCharacterStore.playerClass.className }}</td>
-        </tr>
-      </table>
-    </div>
+    <!--    <CharacterCreator />-->
+    <NameInput></NameInput>
   </div>
 </template>
 
 <!--Composition API with script setup (Recommended)-->
 <script setup>
-import GenderSelection from "../components/GenderSelection.vue";
-import RaceList from "../components/RaceList.vue";
-import { allianceFemales, allianceMales } from "../helpers/alliance.js";
-import { ref } from "vue";
-import { useNewCharacterStore } from "../stores/newCharacterStore";
-import { hordeFemales, hordeMales } from "../helpers/horde.js";
-import ClassList from "../components/ClassList.vue";
-
-const newCharacterStore = useNewCharacterStore();
-
-let alliance = ref([]);
-let horde = ref([]);
-
-newCharacterStore.$subscribe((mutation, state) => {
-  if (state.gender === "Male") {
-    alliance.value = allianceMales;
-    horde.value = hordeMales;
-  }
-  if (state.gender === "Female") {
-    alliance.value = allianceFemales;
-    horde.value = hordeFemales;
-  }
-});
+// import CharacterCreator from "../components/CharacterCreator.vue";
+import NameInput from "../components/NameInput.vue";
 </script>
-
-<!-- Composition API with setup function
-<script>
-import { ref } from "vue";
-
-export default {
-  setup() {
-    const counter = ref(0);
-    //increment function  - increment the counter by 1
-    const increment = () => {
-      counter.value++;
-    };
-    const decrement = () => {
-      counter.value--;
-    };
-    return { counter, increment, decrement };
-  },
-};
-</script>
--->
-
-<!-- Options API
-<script>
-export default {
-  data() {
-    return {
-      counter: 0,
-    };
-  },
-  methods: {
-    increment() {
-      this.counter++;
-    },
-    decrement() {
-      this.counter--;
-    },
-  },
-};
-</script>
--->
