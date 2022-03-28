@@ -11,7 +11,7 @@
       <RaceList :race-list="horde" />
     </div>
   </div>
-  <div class="row">
+  <div class="row m-1">
     <table>
       <tr>
         <td>{{ newCharacterStore.faction }}</td>
@@ -20,6 +20,12 @@
         <td>{{ newCharacterStore.playerClass.className }}</td>
       </tr>
     </table>
+  </div>
+  <div class="row m-1">
+    <h2>{{ newCharacterStore.name }}</h2>
+  </div>
+  <div class="row m-1">
+    <button class="btn btn-primary">I am ready for adventure</button>
   </div>
 </template>
 
