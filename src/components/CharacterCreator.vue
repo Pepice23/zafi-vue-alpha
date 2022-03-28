@@ -25,7 +25,9 @@
     <h2>{{ newCharacterStore.name }}</h2>
   </div>
   <div class="row m-1">
-    <button class="btn btn-primary">I am ready for adventure</button>
+    <button class="btn btn-primary" @click="createNewCharacter">
+      I am ready for adventure
+    </button>
   </div>
 </template>
 
@@ -53,6 +55,16 @@ newCharacterStore.$subscribe((mutation, state) => {
     horde.value = hordeFemales;
   }
 });
+
+const createNewCharacter = () => {
+  newCharacterStore.createCharacterAtAPI(
+    newCharacterStore.name,
+    newCharacterStore.gender,
+    newCharacterStore.faction,
+    newCharacterStore.race.raceName,
+    newCharacterStore.playerClass.className
+  );
+};
 </script>
 
 <style scoped></style>
