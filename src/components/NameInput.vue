@@ -14,32 +14,49 @@
       Note: Character name must be between 3 and 16 letters. It cannot contain
       symbols or numbers
     </p>
-    <p v-if="error" class="text-danger">{{ error }}</p>
+    <p
+      v-if="
+        newCharacterStore.error.statusCode === 400 ||
+        newCharacterStore.error.statusCode === -1
+      "
+      class="text-danger m-2"
+    >
+      {{ newCharacterStore.error.errorMessage }}
+    </p>
+    <p v-if="newCharacterStore.success" class="text-success">
+      {{ newCharacterStore.success }}
+    </p>
 
-    <button class="btn btn-primary" :disabled="buttonDisabled">
+    <button
+      class="btn btn-primary"
+      :disabled="buttonDisabled"
+      @click="checkNameAPI"
+    >
       Check Character Name
     </button>
-
-    <!--
+    <p class="text-danger m-2"></p>
+  </div>
+  <!--
     <p *ngIf="error?.statusCode === 0" class="text-danger m-2">
       The API cannot be reached. It is possibly offline. Try again later
     </p>
-    <p *ngIf="error?.statusCode === 400" class="text-danger m-2">
-      {{ error?.errorMessage }}
-    </p>
+
     <p *ngIf="error?.statusCode === -2" class="text-success m-2">
       {{ error?.errorMessage }}
     </p>
-     -->
-  </div>
+    -->
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { useNewCharacterStore } from "../stores/newCharacterStore.js";
+import { useRouter } from "vue-router";
+
+const newCharacterStore = useNewCharacterStore();
+const router = useRouter();
 
 const characterName = ref("");
 let buttonDisabled = ref(true);
-let error = ref("");
 
 const checkName = () => {
   buttonDisabled.value = !(
@@ -47,6 +64,18 @@ const checkName = () => {
     characterName.value.length >= 3 &&
     characterName.value.length <= 16
   );
+  newCharacterStore.checkNameAtAPI(characterName.value);
+  setTimeout(() => {
+    newCharacterStore.resetError();
+    newCharacterStore.resetSuccess();
+  }, 3000);
+};
+
+const checkNameAPI = () => {
+  characterName.value = "";
+  if (newCharacterStore.name) {
+    router.push("/creator");
+  }
 };
 </script>
 
