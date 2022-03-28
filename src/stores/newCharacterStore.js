@@ -68,5 +68,19 @@ export const useNewCharacterStore = defineStore({
         }
       }
     },
+    async createCharacterAtAPI(name, gender, faction, race, playerClass) {
+      try {
+        await axios.post("http://127.0.0.1:8000/api/character/new/", {
+          character_name: name,
+          character_gender: gender,
+          character_faction: faction,
+          character_race: race,
+          character_class: playerClass,
+        });
+        alert("Ellészült a karakter");
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 });
