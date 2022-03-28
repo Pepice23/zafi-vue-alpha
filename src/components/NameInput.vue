@@ -32,19 +32,10 @@
       :disabled="buttonDisabled"
       @click="checkNameAPI"
     >
-      Check Character Name
+      I choose this name!
     </button>
     <p class="text-danger m-2"></p>
   </div>
-  <!--
-    <p *ngIf="error?.statusCode === 0" class="text-danger m-2">
-      The API cannot be reached. It is possibly offline. Try again later
-    </p>
-
-    <p *ngIf="error?.statusCode === -2" class="text-success m-2">
-      {{ error?.errorMessage }}
-    </p>
-    -->
 </template>
 
 <script setup>
