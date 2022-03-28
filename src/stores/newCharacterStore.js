@@ -10,6 +10,7 @@ export const useNewCharacterStore = defineStore({
     race: {},
     playerClass: {},
     error: {},
+    raceUID: "",
     success: "",
   }),
   getters: {},
@@ -44,6 +45,9 @@ export const useNewCharacterStore = defineStore({
     resetName() {
       this.name = "";
     },
+    setUID(uid) {
+      this.raceUID = uid;
+    },
     async checkNameAtAPI(name) {
       try {
         const data = await axios.get(
@@ -68,7 +72,7 @@ export const useNewCharacterStore = defineStore({
         }
       }
     },
-    async createCharacterAtAPI(name, gender, faction, race, playerClass) {
+    async createCharacterAtAPI(name, gender, faction, race, playerClass, uid) {
       try {
         await axios.post("http://127.0.0.1:8000/api/character/new/", {
           character_name: name,
@@ -76,6 +80,7 @@ export const useNewCharacterStore = defineStore({
           character_faction: faction,
           character_race: race,
           character_class: playerClass,
+          race_uid: uid,
         });
         alert("Ellészült a karakter");
       } catch (error) {

@@ -24,6 +24,7 @@ const selectRace = (race) => {
   newCharacterStore.setRace(race);
   newCharacterStore.resetPlayerClass();
   newCharacterStore.setFaction(race.faction);
+  newCharacterStore.setUID(race.uid);
 };
 </script>
 

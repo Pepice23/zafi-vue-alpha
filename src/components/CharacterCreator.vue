@@ -62,7 +62,8 @@ const createNewCharacter = () => {
     newCharacterStore.gender,
     newCharacterStore.faction,
     newCharacterStore.race.raceName,
-    newCharacterStore.playerClass.className
+    newCharacterStore.playerClass.className,
+    newCharacterStore.raceUID
   );
 };
 </script>
