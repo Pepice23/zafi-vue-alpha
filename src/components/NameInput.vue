@@ -68,7 +68,7 @@ const checkName = () => {
   setTimeout(() => {
     newCharacterStore.resetError();
     newCharacterStore.resetSuccess();
-  }, 3000);
+  }, 5000);
 };
 
 const checkNameAPI = () => {
