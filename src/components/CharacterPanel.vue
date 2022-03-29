@@ -1,42 +1,57 @@
 <template>
-  <div class="row">
-    <div class="col">
-      <figure>
-        <img
-          :src="playerClass.imgPath"
-          :alt="playerClass.className"
-          class="crest"
-        />
-        <figcaption>
-          <h3>{{ props.character.character_name }}</h3>
-        </figcaption>
-        <div class="row">
-          <table class="container">
-            <tbody>
-              <tr>
-                <!--                <td>-->
-                <!--                  <h3>-->
-                <!--                    <img-->
-                <!--                      :src="karakter.faction_icon"-->
-                <!--                      alt=""-->
-                <!--                      class="faction-icon"-->
-                <!--                    />-->
-                <!--                  </h3>-->
-                <!--                </td>-->
-                <td>
-                  <h3>{{ uid.gender }}</h3>
-                </td>
-                <td>
-                  <h3>{{ uid.race }}</h3>
-                </td>
-                <td>
-                  <h3>{{ playerClass.className }}</h3>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <div class="card">
+    <div class="row">
+      <div class="col">
+        <h1>{{ props.character.character_name }}</h1>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span
+            ><figure>
+              <img
+                :src="uid.faction.imgPath"
+                :alt="uid.faction.name"
+                class="flag"
+              />
+            </figure>
+            <figcaption>{{ uid.faction.name }}</figcaption>
+          </span>
         </div>
-      </figure>
+        <div class="col">
+          <span
+            ><figure>
+              <img :src="uid.gender.imgPath" :alt="uid.gender.name" />
+            </figure>
+            <figcaption>{{ uid.gender.name }}</figcaption></span
+          >
+        </div>
+        <div class="col">
+          <span>
+            <figure><img :src="uid.imgPath" :alt="uid.raceName" /></figure>
+            <figcaption>{{ uid.raceName }}</figcaption>
+          </span>
+        </div>
+        <div class="col">
+          <span>
+            <figure>
+              <img
+                :src="playerClass.imgPath"
+                :alt="playerClass.className"
+                class="crest"
+              />
+            </figure>
+            <figcaption>{{ playerClass.className }}</figcaption>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary m-3 buttonSelect">Select</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-danger m-3 buttonSelect">Delete</button>
+      </div>
     </div>
   </div>
 </template>
@@ -49,4 +64,16 @@ const uid = searchUID(props.character.race_uid);
 const playerClass = searchClass(props.character.character_class);
 </script>
 
-<style scoped></style>
+<style scoped>
+.crest {
+  width: 65px;
+  height: 65px;
+}
+.flag {
+  width: 65px;
+  height: 65px;
+}
+.buttonSelect {
+  width: 250px;
+}
+</style>
