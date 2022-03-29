@@ -14,7 +14,7 @@
   <div class="row m-1">
     <table>
       <tr>
-        <td>{{ newCharacterStore.faction }}</td>
+        <td>{{ newCharacterStore.faction.name }}</td>
         <td>{{ newCharacterStore.gender }}</td>
         <td>{{ newCharacterStore.race.raceName }}</td>
         <td>{{ newCharacterStore.playerClass.className }}</td>
@@ -60,7 +60,7 @@ const createNewCharacter = () => {
   newCharacterStore.createCharacterAtAPI(
     newCharacterStore.name,
     newCharacterStore.gender,
-    newCharacterStore.faction,
+    newCharacterStore.faction.name,
     newCharacterStore.race.raceName,
     newCharacterStore.playerClass.className,
     newCharacterStore.raceUID
