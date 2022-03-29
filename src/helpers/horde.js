@@ -19,7 +19,7 @@ const orcM = {
   uid: "orcM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Orc",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/orc_male.png",
   availableClasses: [
     warrior,
@@ -38,7 +38,7 @@ const orcF = {
   raceName: "Orc",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/orc_female.png",
   availableClasses: [
@@ -56,7 +56,7 @@ const undeadM = {
   uid: "undeadM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Undead",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/undead_male.png",
   availableClasses: [
     warrior,
@@ -75,7 +75,7 @@ const undeadF = {
   raceName: "Undead",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/undead_female.png",
   availableClasses: [
@@ -93,7 +93,7 @@ const taurenM = {
   uid: "taurenM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Tauren",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/tauren_male.png",
   availableClasses: [
     warrior,
@@ -112,7 +112,7 @@ const taurenF = {
   raceName: "Tauren",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/tauren_female.png",
   availableClasses: [
@@ -130,7 +130,7 @@ const trollM = {
   uid: "trollM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Troll",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/troll_male.png",
   availableClasses: [
     warrior,
@@ -149,7 +149,7 @@ const trollF = {
   uid: "trollF",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Troll",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/troll_female.png",
   availableClasses: [
     warrior,
@@ -168,7 +168,7 @@ const bloodElfM = {
   uid: "bloodElfM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Blood Elf",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/blood_elf_male.png",
   availableClasses: [
     warrior,
@@ -189,7 +189,7 @@ const bloodElfF = {
   raceName: "Blood Elf",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/blood_elf_female.png",
   availableClasses: [
@@ -209,7 +209,7 @@ const goblinM = {
   uid: "goblinM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Goblin",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/goblin_male.png",
   availableClasses: [
     warrior,
@@ -228,7 +228,7 @@ const goblinF = {
   raceName: "Goblin",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/goblin_female.png",
   availableClasses: [
@@ -246,7 +246,7 @@ const nightborneM = {
   uid: "nightborneM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Nightborne",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/nightborne_male.png",
   availableClasses: [
     warrior,
@@ -265,7 +265,7 @@ const nightborneF = {
   raceName: "Nightborne",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/nightborne_female.png",
   availableClasses: [
@@ -283,7 +283,7 @@ const highmountainM = {
   uid: "highmountainM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Highmountain Tauren",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/highmountain_male.png",
   availableClasses: [warrior, hunter, deathKnight, monk, shaman, druid],
 };
@@ -293,7 +293,7 @@ const highmountainF = {
   raceName: "Highmountain Tauren",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/highmountain_female.png",
   availableClasses: [warrior, hunter, deathKnight, monk, shaman, druid],
@@ -302,7 +302,7 @@ const magharM = {
   uid: "magharM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Mag'har Orc",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/maghar_male.png",
   availableClasses: [
     warrior,
@@ -321,7 +321,7 @@ const magharF = {
   raceName: "Mag'har Orc",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/maghar_female.png",
   availableClasses: [
@@ -339,7 +339,7 @@ const zandalariM = {
   uid: "zandalariM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Zandalari Troll",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/zandalari_male.png",
   availableClasses: [
     warrior,
@@ -360,7 +360,7 @@ const zandalariF = {
   raceName: "Zandalari Troll",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/zandalari_female.png",
   availableClasses: [
@@ -380,7 +380,7 @@ const vulperaM = {
   uid: "vulperaM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Vulpera",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/vulpera_male.png",
   availableClasses: [
     warrior,
@@ -400,7 +400,7 @@ const vulperaF = {
   raceName: "Vulpera",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/vulpera_female.png",
   availableClasses: [
@@ -419,7 +419,7 @@ const hPandarenM = {
   uid: "hPandarenM",
   faction: { name: "Horde", imgPath: "src/assets/flags/horde.png" },
   raceName: "Pandaren",
-  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender-male.png" },
+  gender: { name: "Male", imgPath: "src/assets/gender-icons/gender_male.png" },
   imgPath: "src/assets/race-icons/pandaren_male.png",
   availableClasses: [
     warrior,
@@ -439,7 +439,7 @@ const hPandarenF = {
   raceName: "Pandaren",
   gender: {
     name: "Female",
-    imgPath: "src/assets/gender-icons/gender-female.png",
+    imgPath: "src/assets/gender-icons/gender_female.png",
   },
   imgPath: "src/assets/race-icons/pandaren_female.png",
   availableClasses: [
