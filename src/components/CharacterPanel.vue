@@ -1,6 +1,6 @@
 <template>
-  <div class="card">
-    <div class="row">
+  <div class="card m-1">
+    <div class="row m-1">
       <div class="col">
         <h1>{{ props.character.character_name }}</h1>
       </div>
