@@ -55,7 +55,12 @@
         </button>
       </div>
       <div class="col">
-        <button class="btn btn-danger m-3 buttonSelect">Delete</button>
+        <button
+          class="btn btn-danger m-3 buttonSelect"
+          @click="deleteCharacter"
+        >
+          Delete
+        </button>
       </div>
     </div>
   </div>
@@ -70,6 +75,7 @@ const uid = searchUID(props.character.race_uid);
 const playerClass = searchClass(props.character.character_class);
 let selectedCharacter = {};
 const selectedCharacterStore = useSelectedCharacterStore();
+
 const selectCharacter = () => {
   selectedCharacter = {
     name: props.character.character_name,
@@ -77,6 +83,11 @@ const selectCharacter = () => {
     playerClass: playerClass,
   };
   selectedCharacterStore.setSelectedCharacter(selectedCharacter);
+};
+const deleteCharacter = () => {
+  selectedCharacterStore.deleteCharacter(props.character.character_name);
+  alert("Character deleted");
+  location.reload();
 };
 </script>
 
