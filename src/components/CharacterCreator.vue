@@ -69,6 +69,7 @@ const createNewCharacter = () => {
   );
   alert("Character created");
   router.push("/list");
+  newCharacterStore.$reset();
 };
 </script>
 
