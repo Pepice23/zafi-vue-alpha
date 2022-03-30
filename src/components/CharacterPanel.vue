@@ -47,7 +47,12 @@
     </div>
     <div class="row">
       <div class="col">
-        <button class="btn btn-primary m-3 buttonSelect">Select</button>
+        <button
+          class="btn btn-primary m-3 buttonSelect"
+          @click="selectCharacter"
+        >
+          Select
+        </button>
       </div>
       <div class="col">
         <button class="btn btn-danger m-3 buttonSelect">Delete</button>
@@ -58,10 +63,21 @@
 
 <script setup>
 import { searchUID, searchClass } from "../helpers/utils";
+import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
 
 const props = defineProps(["character"]);
 const uid = searchUID(props.character.race_uid);
 const playerClass = searchClass(props.character.character_class);
+let selectedCharacter = {};
+const selectedCharacterStore = useSelectedCharacterStore();
+const selectCharacter = () => {
+  selectedCharacter = {
+    name: props.character.character_name,
+    uid: uid,
+    playerClass: playerClass,
+  };
+  selectedCharacterStore.setSelectedCharacter(selectedCharacter);
+};
 </script>
 
 <style scoped>
