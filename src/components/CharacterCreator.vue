@@ -39,8 +39,10 @@ import { ref } from "vue";
 import { useNewCharacterStore } from "../stores/newCharacterStore";
 import { hordeFemales, hordeMales } from "../helpers/horde.js";
 import ClassList from "../components/ClassList.vue";
+import { useRouter } from "vue-router";
 
 const newCharacterStore = useNewCharacterStore();
+const router = useRouter();
 
 let alliance = ref([]);
 let horde = ref([]);
@@ -65,6 +67,8 @@ const createNewCharacter = () => {
     newCharacterStore.playerClass.className,
     newCharacterStore.raceUID
   );
+  alert("Character created");
+  router.push("/list");
 };
 </script>
 
