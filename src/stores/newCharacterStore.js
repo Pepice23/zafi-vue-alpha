@@ -82,7 +82,6 @@ export const useNewCharacterStore = defineStore({
           character_class: playerClass,
           race_uid: uid,
         });
-        alert("Ellészült a karakter");
       } catch (error) {
         console.log(error);
       }
