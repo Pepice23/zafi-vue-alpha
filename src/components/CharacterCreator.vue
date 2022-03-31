@@ -24,7 +24,7 @@
   <div class="row m-1">
     <h2>{{ newCharacterStore.name }}</h2>
   </div>
-  <div class="row m-1">
+  <div class="row m-1" v-if="newCharacterStore.playerClass.className">
     <button class="btn btn-primary" @click="createNewCharacter">
       I am ready for adventure
     </button>
