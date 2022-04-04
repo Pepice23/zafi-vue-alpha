@@ -69,20 +69,19 @@
 <script setup>
 import { searchUID, searchClass } from "../helpers/utils";
 import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
+import { useRouter } from "vue-router";
 
 const props = defineProps(["character"]);
 const uid = searchUID(props.character.race_uid);
 const playerClass = searchClass(props.character.character_class);
-let selectedCharacter = {};
 const selectedCharacterStore = useSelectedCharacterStore();
+const router = useRouter();
 
 const selectCharacter = () => {
-  selectedCharacter = {
-    name: props.character.character_name,
-    uid: uid,
-    playerClass: playerClass,
-  };
-  selectedCharacterStore.setSelectedCharacter(selectedCharacter);
+  router.push({
+    name: "game-view",
+    params: { name: props.character.character_name },
+  });
 };
 const deleteCharacter = () => {
   selectedCharacterStore.deleteCharacter(props.character.character_name);
