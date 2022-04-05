@@ -2,51 +2,51 @@
 
 export const warrior = {
   className: "Warrior",
-  imgPath: "src/assets/class-icons/Warrior.png",
+  imgPath: "/assets/class-icons/Warrior.png",
 };
 export const hunter = {
   className: "Hunter",
-  imgPath: "src/assets/class-icons/Hunter.png",
+  imgPath: "/assets/class-icons/Hunter.png",
 };
 export const deathKnight = {
   className: "Death Knight",
-  imgPath: "src/assets/class-icons/Death_Knight.png",
+  imgPath: "/assets/class-icons/Death_Knight.png",
 };
 export const mage = {
   className: "Mage",
-  imgPath: "src/assets/class-icons/Mage.png",
+  imgPath: "/assets/class-icons/Mage.png",
 };
 export const priest = {
   className: "Priest",
-  imgPath: "src/assets/class-icons/Priest.png",
+  imgPath: "/assets/class-icons/Priest.png",
 };
 export const monk = {
   className: "Monk",
-  imgPath: "src/assets/class-icons/Monk.png",
+  imgPath: "/assets/class-icons/Monk.png",
 };
 export const rogue = {
   className: "Rogue",
-  imgPath: "src/assets/class-icons/Rogue.png",
+  imgPath: "/assets/class-icons/Rogue.png",
 };
 export const warlock = {
   className: "Warlock",
-  imgPath: "src/assets/class-icons/Warlock.png",
+  imgPath: "/assets/class-icons/Warlock.png",
 };
 export const shaman = {
   className: "Shaman",
-  imgPath: "src/assets/class-icons/Shaman.png",
+  imgPath: "/assets/class-icons/Shaman.png",
 };
 export const paladin = {
   className: "Paladin",
-  imgPath: "src/assets/class-icons/Paladin.png",
+  imgPath: "/assets/class-icons/Paladin.png",
 };
 export const druid = {
   className: "Druid",
-  imgPath: "src/assets/class-icons/Druid.png",
+  imgPath: "/assets/class-icons/Druid.png",
 };
 export const demonHunter = {
   className: "Demon Hunter",
-  imgPath: "src/assets/class-icons/Demon_Hunter.png",
+  imgPath: "/assets/class-icons/Demon_Hunter.png",
 };
 // END of Classes
 

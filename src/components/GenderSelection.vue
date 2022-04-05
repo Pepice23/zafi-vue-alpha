@@ -7,7 +7,7 @@
         :class="newCharacterStore.gender === 'Male' ? 'btn-success' : ''"
       >
         <figure>
-          <img src="src/assets/gender-icons/gender_male.png" alt="Male" />
+          <img src="/assets/gender-icons/gender_male.png" alt="Male" />
           <figcaption>Male</figcaption>
         </figure>
       </button>
@@ -17,7 +17,7 @@
         :class="newCharacterStore.gender === 'Female' ? 'btn-success' : ''"
       >
         <figure>
-          <img src="src/assets/gender-icons/gender_female.png" alt="Female" />
+          <img src="/assets/gender-icons/gender_female.png" alt="Female" />
           <figcaption>Female</figcaption>
         </figure>
       </button>
