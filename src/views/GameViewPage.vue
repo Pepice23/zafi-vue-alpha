@@ -1,5 +1,4 @@
 <template>
-  <h1>Game View Works</h1>
   <GameView />
 </template>
 
