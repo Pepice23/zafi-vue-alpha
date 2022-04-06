@@ -45,26 +45,7 @@
         </span>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        XP:
-        <div class="progress position-relative">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            :style="{ width: xpPercent + '%' }"
-            :aria-valuenow="character.currentXP"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
-          <small class="justify-content-center d-flex position-absolute w-100">
-            {{ character.currentXP }}/ {{ character.requiredXP }}({{
-              xpPercent
-            }}%)
-          </small>
-        </div>
-      </div>
-    </div>
+    <XPBar :xp="character.xp" />
     <div class="row">
       <div class="col m-1">Level: {{ character.level }}</div>
       <div class="col m-1">ILevel: {{ character.iLevel }}</div>
@@ -85,6 +66,7 @@
 // import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
 import { searchUID, searchClass } from "../helpers/utils";
 import { ref } from "vue";
+import XPBar from "./XPBar.vue";
 // const selectedCharacterStore = useSelectedCharacterStore();
 const props = defineProps(["character"]);
 let uid = ref([]);
