@@ -5,8 +5,15 @@ export const useOfficeStore = defineStore({
   state: () => ({
     time: 8,
     timerStarted: false,
+    dayNumber: 0,
+    workToBeDone: 0,
+    workDone: 0,
   }),
   actions: {
+    startDay() {
+      this.startTimer();
+      this.calculateWorkToBeDone();
+    },
     startTimer() {
       this.time = 8;
       this.timerStarted = true;
@@ -17,8 +24,12 @@ export const useOfficeStore = defineStore({
         if (this.time === 16) {
           clearInterval(officeTimer);
           this.timerStarted = false;
+          this.dayNumber++;
         }
       }, 3000);
+    },
+    calculateWorkToBeDone() {
+      this.workToBeDone = 30 * (this.dayNumber + 1);
     },
   },
 });
