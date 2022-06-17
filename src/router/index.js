@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import CharacterCreatorPage from "../views/CharacterCreatorPage.vue";
 import CharacterListPage from "../views/CharacterListPage.vue";
 import GameViewPage from "../views/GameViewPage.vue";
+import OfficeView from "../views/OfficeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/game/:name",
       name: "game-view",
       component: GameViewPage,
+    },
+    {
+      path: "/office",
+      name: "office-view",
+      component: OfficeView,
     },
   ],
 });
