@@ -26,7 +26,7 @@ export const useOfficeStore = defineStore({
         if (this.time < 16) {
           this.time++;
         }
-        if (this.time === 16) {
+        if (this.time === 16 || this.workToBeDone <= 0) {
           clearInterval(officeTimer);
           this.timerStarted = false;
           this.dayNumber++;
