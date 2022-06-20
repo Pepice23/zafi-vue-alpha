@@ -18,3 +18,19 @@ export function startTimer(sec) {
 function stopTimer() {
   clearInterval(this.countdown);
 }
+
+export const RaidData = {
+  raidName: "Sepulcher of the First Ones",
+  raidLevel: 60,
+  raidDifficulty: "Normal",
+  raidReward: { gold: 200, xp: 200 },
+  raidTime: 300,
+};
+
+export const QuestData = {
+  questName: "Birthday Party",
+  questLevel: 60,
+  questDifficulty: "Normal",
+  questReward: { gold: 200, xp: 200 },
+  questTime: 20,
+};
