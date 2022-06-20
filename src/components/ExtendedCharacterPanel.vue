@@ -8,40 +8,43 @@
         <span
           ><figure>
             <img
-              :src="uid.faction.imgPath"
-              :alt="uid.faction.name"
+              :src="character.uid.faction.imgPath"
+              :alt="character.uid.faction.name"
               class="flag"
             />
           </figure>
-          <figcaption>{{ uid.faction.name }}</figcaption>
+          <figcaption>{{ character.uid.faction.name }}</figcaption>
         </span>
       </div>
       <div class="col">
         <span
           ><figure>
-            <img :src="uid.gender.imgPath" :alt="uid.gender.name" />
+            <img
+              :src="character.uid.gender.imgPath"
+              :alt="character.uid.gender.name"
+            />
           </figure>
-          <figcaption>{{ uid.gender.name }}</figcaption></span
+          <figcaption>{{ character.uid.gender.name }}</figcaption></span
         >
       </div>
       <div class="col">
         <span>
           <figure>
-            <img :src="uid.imgPath" :alt="uid.raceName" />
+            <img :src="character.uid.imgPath" :alt="character.uid.raceName" />
           </figure>
-          <figcaption>{{ uid.raceName }}</figcaption>
+          <figcaption>{{ character.uid.raceName }}</figcaption>
         </span>
       </div>
       <div class="col">
         <span>
           <figure>
             <img
-              :src="playerClass.imgPath"
-              :alt="playerClass.className"
+              :src="character.playerClass.imgPath"
+              :alt="character.playerClass.className"
               class="crest"
             />
           </figure>
-          <figcaption>{{ playerClass.className }}</figcaption>
+          <figcaption>{{ character.playerClass.className }}</figcaption>
         </span>
       </div>
     </div>
@@ -63,24 +66,18 @@
 </template>
 
 <script setup>
-// import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
+import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
 import { searchUID, searchClass } from "../helpers/utils";
 import { ref } from "vue";
 import XPBar from "./XPBar.vue";
-// const selectedCharacterStore = useSelectedCharacterStore();
-const props = defineProps(["character"]);
-let uid = ref([]);
-let playerClass = ref([]);
+const selectedCharacterStore = useSelectedCharacterStore();
+const character = selectedCharacterStore;
 let xpPercent = ref(0);
-// const playerClass = searchClass(
-//   selectedCharacterStore.downloadedCharacter.race_uid
-// );
 
 const setUpCharacter = () => {
-  uid = searchUID(props.character.uid);
-  playerClass = searchClass(props.character.playerClass);
   xpPercent.value =
-    (props.character.currentXP / props.character.requiredXP) * 100;
+    (selectedCharacterStore.currentXP / selectedCharacterStore.requiredXP) *
+    100;
 };
 setUpCharacter();
 </script>
