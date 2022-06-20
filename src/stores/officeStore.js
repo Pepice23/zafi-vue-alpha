@@ -8,6 +8,10 @@ export const useOfficeStore = defineStore({
     dayNumber: 0,
     workToBeDone: 0,
     workDone: 0,
+    wpc: 1,
+    mpc: 1,
+    wps: 0,
+    mps: 0,
   }),
   actions: {
     startDay() {
