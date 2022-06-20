@@ -9,10 +9,4 @@ export const selectedCharacterData = {
   level: 1,
   iLevel: 1,
   money: 200,
-  workDone: 400,
-  workRemaining: 200,
-  wpc: 1,
-  mpc: 1,
-  wps: 20,
-  mps: 20,
 };
