@@ -12,6 +12,7 @@ export const useOfficeStore = defineStore({
     mpc: 1,
     wps: 0,
     mps: 0,
+    money: 0,
   }),
   actions: {
     startDay() {
@@ -34,6 +35,12 @@ export const useOfficeStore = defineStore({
     },
     calculateWorkToBeDone() {
       this.workToBeDone = 30 * (this.dayNumber + 1);
+    },
+    doWork() {
+      if (this.workToBeDone >= this.wpc) {
+        this.workToBeDone -= this.wpc;
+        this.money += this.mpc;
+      }
     },
   },
 });
