@@ -1,5 +1,9 @@
 <template>
-  <button class="btn btn-primary big-work-button" @click="officeStore.doWork">
+  <button
+    class="btn btn-primary big-work-button"
+    @click="officeStore.doWork"
+    :disabled="officeStore.workToBeDone <= 0"
+  >
     WORK!!!
   </button>
 </template>
