@@ -14,7 +14,7 @@
         </h5>
         <h5 class="card-text">Time: {{ upgradeDetails.timer }} sec</h5>
       </div>
-
+      <h5 class="card-text m-1">Price: {{ upgradeDetails.price }}</h5>
       <button class="btn btn-primary">Buy Upgrade</button>
     </div>
   </div>
