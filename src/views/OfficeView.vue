@@ -21,6 +21,9 @@
   </div>
   <div class="row m-3">
     <div class="col">
+      <OfficeUpgradeList />
+    </div>
+    <div class="col">
       <BigWorkButton />
     </div>
   </div>
@@ -45,6 +48,7 @@
 import OfficeClock from "../components/office/OfficeClock.vue";
 import BigWorkButton from "../components/office/BigWorkButton.vue";
 import { useOfficeStore } from "../stores/officeStore.js";
+import OfficeUpgradeList from "../components/office/OfficeUpgradeList.vue";
 
 const officeStore = useOfficeStore();
 </script>
