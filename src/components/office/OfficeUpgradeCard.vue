@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{ upgradeName }}</h5>
+      <h3 class="card-title">{{ upgradeName }}</h3>
       <div v-if="upgradeDetails.timer === 0" class="m-1">
         <h5 class="card-text">
           {{ upgradeDetails.WPC }} WPC / {{ upgradeDetails.MPC }} MPC
@@ -16,6 +16,7 @@
       </div>
       <h5 class="card-text m-1">Price: {{ upgradeDetails.price }}</h5>
       <button class="btn btn-primary">Buy Upgrade</button>
+      <h5 class="card-text m-1">Quantity: {{ upgradeDetails.qty }}</h5>
     </div>
   </div>
 </template>
