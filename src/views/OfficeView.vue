@@ -25,21 +25,11 @@
     </div>
     <div class="col">
       <BigWorkButton />
+      <h2 class="m-3">Money: {{ officeStore.money }}</h2>
     </div>
-  </div>
-  <div class="row m-1">
     <div class="col">
       <h2>WPC/MPC: {{ officeStore.wpc }} / {{ officeStore.mpc }}</h2>
-    </div>
-  </div>
-  <div class="row m-1">
-    <div class="col">
       <h2>WPS/MPS: {{ officeStore.wps }}/s / {{ officeStore.mps }}/s</h2>
-    </div>
-  </div>
-  <div class="row m-1">
-    <div class="col">
-      <h2>Money: {{ officeStore.money }}</h2>
     </div>
   </div>
 </template>
