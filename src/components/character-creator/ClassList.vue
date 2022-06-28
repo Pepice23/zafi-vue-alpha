@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { useNewCharacterStore } from "../stores/newCharacterStore";
+import { useNewCharacterStore } from "../../stores/newCharacterStore";
 const props = defineProps(["classList"]);
 const newCharacterStore = useNewCharacterStore();
 </script>

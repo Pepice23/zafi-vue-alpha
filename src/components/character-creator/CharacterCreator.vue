@@ -37,13 +37,13 @@
 </template>
 
 <script setup>
-import GenderSelection from "../components/GenderSelection.vue";
-import RaceList from "../components/RaceList.vue";
-import { allianceFemales, allianceMales } from "../helpers/alliance.js";
+import GenderSelection from "./GenderSelection.vue";
+import RaceList from "./RaceList.vue";
+import { allianceFemales, allianceMales } from "../../helpers/alliance.js";
 import { ref } from "vue";
-import { useNewCharacterStore } from "../stores/newCharacterStore";
-import { hordeFemales, hordeMales } from "../helpers/horde.js";
-import ClassList from "../components/ClassList.vue";
+import { useNewCharacterStore } from "../../stores/newCharacterStore";
+import { hordeFemales, hordeMales } from "../../helpers/horde.js";
+import ClassList from "./ClassList.vue";
 import { useRouter } from "vue-router";
 import NameInput from "./NameInput.vue";
 

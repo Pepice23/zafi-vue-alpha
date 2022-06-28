@@ -40,7 +40,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { useNewCharacterStore } from "../stores/newCharacterStore.js";
+import { useNewCharacterStore } from "../../stores/newCharacterStore.js";
 import { useRouter } from "vue-router";
 
 const newCharacterStore = useNewCharacterStore();

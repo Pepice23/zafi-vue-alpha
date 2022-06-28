@@ -66,10 +66,10 @@
 </template>
 
 <script setup>
-import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
-import { searchUID, searchClass } from "../helpers/utils";
+import { useSelectedCharacterStore } from "../../stores/selectedCharacterStore";
+import { searchUID, searchClass } from "../../helpers/utils";
 import { ref } from "vue";
-import XPBar from "./XPBar.vue";
+import XPBar from "../XPBar.vue";
 const selectedCharacterStore = useSelectedCharacterStore();
 const character = selectedCharacterStore;
 let xpPercent = ref(0);

@@ -67,8 +67,8 @@
 </template>
 
 <script setup>
-import { searchUID, searchClass } from "../helpers/utils";
-import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
+import { searchUID, searchClass } from "../../helpers/utils";
+import { useSelectedCharacterStore } from "../../stores/selectedCharacterStore";
 import { useRouter } from "vue-router";
 
 const props = defineProps(["character"]);

@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { useAllCharactersStore } from "../stores/allCharacterStore";
+import { useAllCharactersStore } from "../../stores/allCharacterStore";
 import CharacterPanel from "./CharacterPanel.vue";
 import { useRouter } from "vue-router";
 

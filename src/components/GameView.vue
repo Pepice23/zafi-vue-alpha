@@ -36,10 +36,10 @@
 import { selectedCharacterData } from "../helpers/selectedCharacterData";
 import { DungeonData, QuestData, RaidData } from "../helpers/DungeonData";
 import { useSelectedCharacterStore } from "../stores/selectedCharacterStore";
-import ExtendedCharacterPanel from "./ExtendedCharacterPanel.vue";
-import DungeonUI from "./DungeonUI.vue";
-import QuestUI from "./QuestUI.vue";
-import RaidUI from "./RaidUI.vue";
+import ExtendedCharacterPanel from "./character-creator/ExtendedCharacterPanel.vue";
+import DungeonUI from "./activities/DungeonUI.vue";
+import QuestUI from "./activities/QuestUI.vue";
+import RaidUI from "./activities/RaidUI.vue";
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();

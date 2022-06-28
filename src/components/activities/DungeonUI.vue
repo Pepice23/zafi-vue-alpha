@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import Timer from "./Timer.vue";
+import Timer from "../Timer.vue";
 const props = defineProps(["dungeon"]);
 </script>
 

@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { useNewCharacterStore } from "../stores/newCharacterStore.js";
+import { useNewCharacterStore } from "../../stores/newCharacterStore.js";
 
 const newCharacterStore = useNewCharacterStore();
 
