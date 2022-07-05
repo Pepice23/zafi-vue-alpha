@@ -54,10 +54,16 @@
       <button type="submit" class="btn btn-primary">Sign up</button>
     </form>
   </div>
+  <div>
+    <h3>{{ accountRegisterStore.error }}</h3>
+    <h3>{{ accountRegisterStore.success }}</h3>
+  </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+import { useAccountRegisterStore } from "../stores/accountRegisterStore";
 const accountUserName = ref("");
 const accountEmail = ref("");
 const accountPassword1 = ref("");
@@ -67,12 +73,15 @@ const userNameStatus = ref("");
 const emailStatus = ref("");
 const passwordStatus = ref("");
 
+const accountRegisterStore = useAccountRegisterStore();
+
 // TODO: add password to store when password is valid
 
 const checkUserNameValidity = () => {
   if (/^[a-zA-Z0-9_]{3,20}$/.test(accountUserName.value)) {
     //TODO: check if user name is free
     userNameStatus.value = "Username is valid";
+    accountRegisterStore.checkUserNameAtAPI(accountUserName.value);
   } else {
     userNameStatus.value = "Username is invalid";
   }
