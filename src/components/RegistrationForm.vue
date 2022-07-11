@@ -13,7 +13,18 @@
         />
       </div>
       <div>
-        <p>{{ userNameStatus }}</p>
+        <p
+          v-if="
+            accountRegisterStore.error.statusCode === 400 ||
+            accountRegisterStore.error.statusCode === -1
+          "
+          class="text-danger m-2"
+        >
+          {{ accountRegisterStore.error.errorMessage }}
+        </p>
+        <p v-if="accountRegisterStore.success.length > 3" class="text-success">
+          {{ accountRegisterStore.success }}
+        </p>
       </div>
       <div class="mb-3">
         <label for="inputEmail" class="form-label">Email address:</label>
@@ -51,7 +62,14 @@
       <div>
         <p>{{ passwordStatus }}</p>
       </div>
-      <button type="submit" class="btn btn-primary">Sign up</button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        :disabled="!accountRegisterStore.accountReady"
+        @click="accountRegisterStore.registerAccountAtAPI"
+      >
+        Sign up
+      </button>
     </form>
   </div>
   <div>
@@ -75,15 +93,10 @@ const passwordStatus = ref("");
 
 const accountRegisterStore = useAccountRegisterStore();
 
-// TODO: add password to store when password is valid
-
 const checkUserNameValidity = () => {
   if (/^[a-zA-Z0-9_]{3,20}$/.test(accountUserName.value)) {
-    //TODO: check if user name is free
-    userNameStatus.value = "Username is valid";
     accountRegisterStore.checkUserNameAtAPI(accountUserName.value);
-  } else {
-    userNameStatus.value = "Username is invalid";
+    accountRegisterStore.checkAccount();
   }
 };
 
@@ -94,10 +107,11 @@ const checkEmailValidity = () => {
     )
   ) {
     emailStatus.value = "Email is valid";
-    // TODO: check if email is already in use if not add to store
+    accountRegisterStore.checkEmailAtAPI(accountEmail.value);
   } else {
     emailStatus.value = "Email is invalid";
   }
+  accountRegisterStore.checkAccount();
 };
 
 const checkPasswordValidity = () => {
@@ -108,9 +122,12 @@ const checkPasswordValidity = () => {
   ) {
     if (accountPassword1.value === accountPassword2.value) {
       passwordStatus.value = "Passwords match";
+      accountRegisterStore.password1 = accountPassword1.value;
+      accountRegisterStore.password2 = accountPassword2.value;
     } else {
       passwordStatus.value = "Passwords do not match";
     }
+    accountRegisterStore.checkAccount();
   }
 };
 </script>
