@@ -77,7 +77,19 @@
         />
       </div>
       <div>
-        <p>{{ passwordStatus }}</p>
+        <p v-if="accountPassword1 !== accountPassword2" class="text-danger m-2">
+          Passwords does not match
+        </p>
+        <p
+          v-if="
+            accountRegisterStore.password1 === accountRegisterStore.password2 &&
+            accountRegisterStore.password1.length >= 8 &&
+            accountRegisterStore.password2.length >= 8
+          "
+          class="text-success"
+        >
+          Passwords match
+        </p>
       </div>
       <button
         type="submit"
@@ -104,8 +116,6 @@ const accountEmail = ref("");
 const accountPassword1 = ref("");
 const accountPassword2 = ref("");
 
-const userNameStatus = ref("");
-const emailStatus = ref("");
 const passwordStatus = ref("");
 
 const accountRegisterStore = useAccountRegisterStore();
@@ -119,15 +129,13 @@ const checkUserNameValidity = () => {
 };
 
 const checkEmailValidity = () => {
+  accountRegisterStore.email = "";
   if (
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       accountEmail.value
     )
   ) {
-    emailStatus.value = "Email is valid";
     accountRegisterStore.checkEmailAtAPI(accountEmail.value);
-  } else {
-    emailStatus.value = "Email is invalid";
   }
   accountRegisterStore.checkAccount();
 };
@@ -144,6 +152,8 @@ const checkPasswordValidity = () => {
       accountRegisterStore.password2 = accountPassword2.value;
     } else {
       passwordStatus.value = "Passwords do not match";
+      accountRegisterStore.password1 = "";
+      accountRegisterStore.password2 = "";
     }
     accountRegisterStore.checkAccount();
   }
