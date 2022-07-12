@@ -8,8 +8,10 @@ export const useAccountRegisterStore = defineStore({
     email: "",
     password1: "",
     password2: "",
-    error: {},
-    success: "",
+    userNameError: {},
+    emailError: {},
+    userNameSuccess: "",
+    emailSuccess: "",
     accountReady: false,
   }),
   actions: {
@@ -24,11 +26,20 @@ export const useAccountRegisterStore = defineStore({
     resetUserName() {
       this.userName = "";
     },
-    resetError() {
-      this.error = {};
+    resetUsernameError() {
+      this.userNameError = {};
     },
-    resetSuccess() {
-      this.success = "";
+    resetUsernameSuccess() {
+      this.userNameSuccess = "";
+    },
+    resetEmail() {
+      this.email = "";
+    },
+    resetEmailError() {
+      this.emailError = {};
+    },
+    resetEmailSuccess() {
+      this.emailSuccess = "";
     },
     async checkUserNameAtAPI(name) {
       try {
@@ -37,18 +48,18 @@ export const useAccountRegisterStore = defineStore({
         );
         if (data.status === 200) {
           this.userName = data.data.username;
-          this.success = "Username is available";
-          this.resetError();
+          this.userNameSuccess = "Username is available";
+          this.resetUsernameError();
         }
       } catch (error) {
-        this.resetSuccess();
+        this.resetUsernameSuccess();
         if (error.response === undefined) {
-          this.error = {
+          this.userNameError = {
             errorMessage: "The API is not available at the moment.",
             statusCode: -1,
           };
         } else {
-          this.error = {
+          this.userNameError = {
             errorMessage: error.response.data,
             statusCode: error.response.status,
           };
@@ -63,21 +74,21 @@ export const useAccountRegisterStore = defineStore({
         );
         if (data.status === 200) {
           this.email = data.data.email;
-          this.success = "Email is available";
-          this.resetError();
+          this.emailSuccess = "Email is available";
+          this.resetEmailError();
         }
       } catch (error) {
         if (error.response === undefined) {
-          this.error = {
+          this.emailError = {
             errorMessage: "The API is not available at the moment.",
             statusCode: -1,
           };
         } else {
-          this.error = {
+          this.emailError = {
             errorMessage: error.response.data,
             statusCode: error.response.status,
           };
-          this.resetUserName();
+          this.resetEmail();
         }
       }
     },
