@@ -15,15 +15,21 @@
       <div>
         <p
           v-if="
-            accountRegisterStore.error.statusCode === 400 ||
-            accountRegisterStore.error.statusCode === -1
+            accountRegisterStore.userNameError.statusCode === 400 ||
+            accountRegisterStore.userNameError.statusCode === -1
           "
           class="text-danger m-2"
         >
-          {{ accountRegisterStore.error.errorMessage }}
+          {{ accountRegisterStore.userNameError.errorMessage }}
         </p>
-        <p v-if="accountRegisterStore.success.length > 3" class="text-success">
-          {{ accountRegisterStore.success }}
+        <p
+          v-if="
+            accountRegisterStore.userName.length >= 3 &&
+            accountRegisterStore.userName.length <= 16
+          "
+          class="text-success"
+        >
+          {{ accountRegisterStore.userNameSuccess }}
         </p>
       </div>
       <div class="mb-3">
@@ -37,7 +43,18 @@
         />
       </div>
       <div>
-        <p>{{ emailStatus }}</p>
+        <p
+          v-if="
+            accountRegisterStore.emailError.statusCode === 400 ||
+            accountRegisterStore.emailError.statusCode === -1
+          "
+          class="text-danger m-2"
+        >
+          {{ accountRegisterStore.emailError.errorMessage }}
+        </p>
+        <p v-if="accountRegisterStore.email.length >= 3" class="text-success">
+          {{ accountRegisterStore.emailSuccess }}
+        </p>
       </div>
       <div class="mb-3">
         <label for="inputPassword1" class="form-label">Password:</label>
@@ -94,7 +111,8 @@ const passwordStatus = ref("");
 const accountRegisterStore = useAccountRegisterStore();
 
 const checkUserNameValidity = () => {
-  if (/^[a-zA-Z0-9_]{3,20}$/.test(accountUserName.value)) {
+  accountRegisterStore.userName = "";
+  if (/^[a-zA-Z0-9_]{3,16}$/.test(accountUserName.value)) {
     accountRegisterStore.checkUserNameAtAPI(accountUserName.value);
     accountRegisterStore.checkAccount();
   }
