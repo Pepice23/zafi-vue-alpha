@@ -94,7 +94,7 @@ export const useAccountRegisterStore = defineStore({
     },
     async registerAccountAtAPI() {
       try {
-        await axios.post(
+        const data = await axios.post(
           "http://127.0.0.1:8000/api/dj-rest-auth/registration/",
           {
             username: this.userName,
@@ -103,8 +103,11 @@ export const useAccountRegisterStore = defineStore({
             email: this.email,
           }
         );
+        if (data.status === 201) {
+          alert("Account created! You can now log in");
+        }
       } catch (error) {
-        console.log(error);
+        alert("Account could not be created");
       }
     },
   },
