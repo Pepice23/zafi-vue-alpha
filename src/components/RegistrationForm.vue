@@ -1,7 +1,7 @@
 <template>
   <h1>Sign up</h1>
   <div>
-    <form>
+    <form @submit.prevent="accountRegisterStore.registerAccountAtAPI">
       <div class="mb-3">
         <label for="inputUsername" class="form-label">Username:</label>
         <input
@@ -95,7 +95,6 @@
         type="submit"
         class="btn btn-primary"
         :disabled="!accountRegisterStore.accountReady"
-        @click="accountRegisterStore.registerAccountAtAPI"
       >
         Sign up
       </button>
