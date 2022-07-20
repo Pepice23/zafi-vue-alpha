@@ -4,6 +4,7 @@ import CharacterCreatorPage from "../views/CharacterCreatorPage.vue";
 import CharacterListPage from "../views/CharacterListPage.vue";
 import GameViewPage from "../views/GameViewPage.vue";
 import OfficeView from "../views/OfficeView.vue";
+import LoginPage from "../components/LoginForm.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/office",
       name: "office-view",
       component: OfficeView,
+    },
+    {
+      path: "/login",
+      name: "login-view",
+      component: LoginPage,
     },
   ],
 });

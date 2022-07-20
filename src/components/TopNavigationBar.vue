@@ -7,7 +7,7 @@
         >Create new Character</router-link
       >
       <router-link class="nav-link" to="/office">Office</router-link>
-      <a class="nav-link" href="#">Login</a>
+      <router-link class="nav-link" to="/login">Login</router-link>
     </div>
   </nav>
 </template>
