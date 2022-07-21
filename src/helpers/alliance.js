@@ -186,6 +186,7 @@ const draeneiM = {
     monk,
     shaman,
     paladin,
+    rogue,
   ],
 };
 const draeneiF = {
@@ -206,6 +207,7 @@ const draeneiF = {
     monk,
     shaman,
     paladin,
+    rogue,
   ],
 };
 const worgenM = {
@@ -290,7 +292,15 @@ const lightforgedM = {
   raceName: "Lightforged Draenei",
   gender: { name: "Male", imgPath: "/assets/gender-icons/gender_male.png" },
   imgPath: "/assets/race-icons/lightforged_male.png",
-  availableClasses: [warrior, hunter, deathKnight, mage, priest, paladin],
+  availableClasses: [
+    warrior,
+    hunter,
+    deathKnight,
+    mage,
+    priest,
+    paladin,
+    rogue,
+  ],
 };
 const lightforgedF = {
   uid: "lightforgedF",
@@ -301,7 +311,15 @@ const lightforgedF = {
     imgPath: "/assets/gender-icons/gender_female.png",
   },
   imgPath: "/assets/race-icons/lightforged_female.png",
-  availableClasses: [warrior, hunter, deathKnight, mage, priest, paladin],
+  availableClasses: [
+    warrior,
+    hunter,
+    deathKnight,
+    mage,
+    priest,
+    paladin,
+    rogue,
+  ],
 };
 const darkIronM = {
   uid: "darkIronM",

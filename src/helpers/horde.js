@@ -33,6 +33,7 @@ const orcM = {
     rogue,
     warlock,
     shaman,
+    priest,
   ],
 };
 const orcF = {
@@ -53,6 +54,7 @@ const orcF = {
     rogue,
     warlock,
     shaman,
+    priest,
   ],
 };
 const undeadM = {
@@ -107,6 +109,8 @@ const taurenM = {
     shaman,
     paladin,
     druid,
+    mage,
+    rogue,
   ],
 };
 const taurenF = {
@@ -127,6 +131,8 @@ const taurenF = {
     shaman,
     paladin,
     druid,
+    mage,
+    rogue,
   ],
 };
 const trollM = {
@@ -288,7 +294,17 @@ const highmountainM = {
   raceName: "Highmountain Tauren",
   gender: { name: "Male", imgPath: "/assets/gender-icons/gender_male.png" },
   imgPath: "/assets/race-icons/highmountain_male.png",
-  availableClasses: [warrior, hunter, deathKnight, monk, shaman, druid],
+  availableClasses: [
+    warrior,
+    hunter,
+    deathKnight,
+    monk,
+    shaman,
+    druid,
+    mage,
+    priest,
+    rogue,
+  ],
 };
 const highmountainF = {
   uid: "highmountainF",
@@ -299,7 +315,17 @@ const highmountainF = {
     imgPath: "/assets/gender-icons/gender_female.png",
   },
   imgPath: "/assets/race-icons/highmountain_female.png",
-  availableClasses: [warrior, hunter, deathKnight, monk, shaman, druid],
+  availableClasses: [
+    warrior,
+    hunter,
+    deathKnight,
+    monk,
+    shaman,
+    druid,
+    mage,
+    priest,
+    rogue,
+  ],
 };
 const magharM = {
   uid: "magharM",
