@@ -7,6 +7,7 @@ export const useAccountLoginStore = defineStore({
     userName: "",
     password: "",
     token: "",
+    isLoggedIn: false,
   }),
   actions: {
     resetUserName() {
@@ -24,6 +25,7 @@ export const useAccountLoginStore = defineStore({
         if (data.status === 200) {
           alert("Logged in successfully");
           this.token = data.data.key;
+          this.isLoggedIn = true;
         }
       } catch (error) {
         alert("Login failed");
