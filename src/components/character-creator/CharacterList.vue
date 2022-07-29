@@ -24,7 +24,7 @@ allCharacterStore.getEveryCharacter();
 const router = useRouter();
 
 const createNewCharacter = () => {
-  router.push("/");
+  router.push("/choose-name");
 };
 </script>
 
