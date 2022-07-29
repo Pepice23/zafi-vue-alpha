@@ -1,40 +1,38 @@
 <template>
   <div class="col">
-    <label for="characterName" class="form-label">Character name:</label>
-    <input
-      type="text"
-      placeholder="Type the name of your character here..."
-      id="characterName"
-      class="form-control mb-3"
-      v-model="characterName"
-      @input="checkName"
-    />
+    <form @submit.prevent="checkNameAPI">
+      <label for="characterName" class="form-label">Character name:</label>
+      <input
+        type="text"
+        placeholder="Type the name of your character here..."
+        id="characterName"
+        class="form-control mb-3"
+        v-model="characterName"
+        @input="checkName"
+      />
 
-    <p>
-      Note: Character name must be between 3 and 16 letters. It cannot contain
-      symbols or numbers
-    </p>
-    <p
-      v-if="
-        newCharacterStore.error.statusCode === 400 ||
-        newCharacterStore.error.statusCode === -1
-      "
-      class="text-danger m-2"
-    >
-      {{ newCharacterStore.error.errorMessage }}
-    </p>
-    <p v-if="newCharacterStore.success" class="text-success">
-      {{ newCharacterStore.success }}
-    </p>
+      <p>
+        Note: Character name must be between 3 and 16 letters. It cannot contain
+        symbols or numbers
+      </p>
+      <p
+        v-if="
+          newCharacterStore.error.statusCode === 400 ||
+          newCharacterStore.error.statusCode === -1
+        "
+        class="text-danger m-2"
+      >
+        {{ newCharacterStore.error.errorMessage }}
+      </p>
+      <p v-if="newCharacterStore.success" class="text-success">
+        {{ newCharacterStore.success }}
+      </p>
 
-    <button
-      class="btn btn-primary"
-      :disabled="buttonDisabled"
-      @click="checkNameAPI"
-    >
-      I choose this name!
-    </button>
-    <p class="text-danger m-2"></p>
+      <button class="btn btn-primary" :disabled="buttonDisabled">
+        I choose this name!
+      </button>
+      <p class="text-danger m-2"></p>
+    </form>
   </div>
 </template>
 
@@ -63,10 +61,7 @@ const checkName = () => {
 };
 
 const checkNameAPI = () => {
-  characterName.value = "";
-  if (newCharacterStore.name) {
-    router.push("/creator");
-  }
+  router.push("/creator");
 };
 </script>
 

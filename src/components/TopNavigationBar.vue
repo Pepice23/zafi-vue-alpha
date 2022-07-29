@@ -3,7 +3,7 @@
     <router-link to="/" class="navbar-brand">Zafi and the B.B.B.</router-link>
     <div class="navbar-nav">
       <router-link to="/list" class="nav-link">Characters</router-link>
-      <router-link class="nav-link" to="/creator"
+      <router-link class="nav-link" to="/choose-name"
         >Create new Character</router-link
       >
       <router-link class="nav-link" to="/office">Office</router-link>

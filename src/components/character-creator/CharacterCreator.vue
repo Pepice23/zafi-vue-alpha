@@ -1,7 +1,4 @@
 <template>
-  <div v-if="newCharacterStore.name.length <= 0">
-    <NameInput />
-  </div>
   <div v-if="newCharacterStore.name.length > 0">
     <GenderSelection />
     <div class="row">
@@ -45,7 +42,6 @@ import { useNewCharacterStore } from "../../stores/newCharacterStore";
 import { hordeFemales, hordeMales } from "../../helpers/horde.js";
 import ClassList from "./ClassList.vue";
 import { useRouter } from "vue-router";
-import NameInput from "./NameInput.vue";
 
 const newCharacterStore = useNewCharacterStore();
 const router = useRouter();

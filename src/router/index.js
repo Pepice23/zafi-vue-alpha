@@ -5,6 +5,7 @@ import CharacterCreatorPage from "../views/CharacterCreatorPage.vue";
 import CharacterListPage from "../views/CharacterListPage.vue";
 import GameViewPage from "../views/GameViewPage.vue";
 import OfficeView from "../views/OfficeView.vue";
+import ChooseNamePage from "../views/ChooseNamePage.vue";
 import LoginPage from "../components/LoginForm.vue";
 
 const router = createRouter({
@@ -33,11 +34,18 @@ const router = createRouter({
       meta: { requiresAuth: true },
       component: GameViewPage,
     },
+
     {
       path: "/office",
       name: "office-view",
       meta: { requiresAuth: true },
       component: OfficeView,
+    },
+    {
+      path: "/choose-name",
+      name: "choose-name",
+      meta: { requiresAuth: true },
+      component: ChooseNamePage,
     },
     {
       path: "/login",
