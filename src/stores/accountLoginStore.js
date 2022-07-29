@@ -26,6 +26,8 @@ export const useAccountLoginStore = defineStore({
           alert("Logged in successfully");
           this.token = data.data.key;
           this.isLoggedIn = true;
+          this.userName = "";
+          this.password = "";
         }
       } catch (error) {
         alert("Login failed");
