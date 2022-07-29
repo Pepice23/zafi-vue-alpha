@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 import { searchUID, searchClass } from "../helpers/utils";
+import { useAccountLoginStore } from "./accountLoginStore";
 
 export const useSelectedCharacterStore = defineStore({
   id: "selectedCharacterStore",
@@ -27,8 +28,11 @@ export const useSelectedCharacterStore = defineStore({
       }
     },
     async getSelectedCharacterFromAPI(name) {
+      const accountLoginStore = useAccountLoginStore();
       try {
-        const data = await axios.get(`http://127.0.0.1:8000/api/${name}`);
+        const data = await axios.get(`http://127.0.0.1:8000/api/${name}`, {
+          headers: { Authorization: `Token ${accountLoginStore.token}` },
+        });
         //this.downloadedCharacter = data.data;
         this.uid_string = data.data.race_uid;
         this.uid = searchUID(this.uid_string);

@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import { useAccountLoginStore } from "./accountLoginStore";
 
 export const useNewCharacterStore = defineStore({
   id: "newCharacterStore",
@@ -49,9 +50,11 @@ export const useNewCharacterStore = defineStore({
       this.raceUID = uid;
     },
     async checkNameAtAPI(name) {
+      const accountLoginStore = useAccountLoginStore();
       try {
         const data = await axios.get(
-          `http://127.0.0.1:8000/api/namecheck/${name}`
+          `http://127.0.0.1:8000/api/namecheck/${name}`,
+          { headers: { Authorization: `Token ${accountLoginStore.token}` } }
         );
         if (data.status === 200) {
           this.name = data.data.name;
@@ -73,15 +76,20 @@ export const useNewCharacterStore = defineStore({
       }
     },
     async createCharacterAtAPI(name, gender, faction, race, playerClass, uid) {
+      const accountLoginStore = useAccountLoginStore();
       try {
-        await axios.post("http://127.0.0.1:8000/api/character/new/", {
-          character_name: name,
-          character_gender: gender,
-          character_faction: faction,
-          character_race: race,
-          character_class: playerClass,
-          race_uid: uid,
-        });
+        await axios.post(
+          "http://127.0.0.1:8000/api/character/new/",
+          {
+            character_name: name,
+            character_gender: gender,
+            character_faction: faction,
+            character_race: race,
+            character_class: playerClass,
+            race_uid: uid,
+          },
+          { headers: { Authorization: `Token ${accountLoginStore.token}` } }
+        );
       } catch (error) {
         console.log(error);
       }

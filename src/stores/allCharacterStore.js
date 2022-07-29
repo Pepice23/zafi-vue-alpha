@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import { useAccountLoginStore } from "./accountLoginStore";
 
 export const useAllCharactersStore = defineStore({
   id: "allCharactersStore",
@@ -9,8 +10,11 @@ export const useAllCharactersStore = defineStore({
   }),
   actions: {
     async getEveryCharacter() {
+      const accountLoginStore = useAccountLoginStore();
       try {
-        const data = await axios.get("http://127.0.0.1:8000/api/");
+        const data = await axios.get("http://127.0.0.1:8000/api/", {
+          headers: { Authorization: `Token ${accountLoginStore.token}` },
+        });
         if (data.status === 200) {
           this.allCharacters = data.data;
         }
