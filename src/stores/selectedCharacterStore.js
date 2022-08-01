@@ -7,8 +7,6 @@ import { useAllCharactersStore } from "./allCharacterStore";
 export const useSelectedCharacterStore = defineStore({
   id: "selectedCharacterStore",
   state: () => ({
-    selectedCharacterName: "",
-    downloadedCharacter: {},
     error: {},
     uid: {},
     playerClass: {},
@@ -18,6 +16,7 @@ export const useSelectedCharacterStore = defineStore({
     race: "",
     xp: 0,
     level: 0,
+    itemLevel: 0,
     money: 0,
   }),
   actions: {
@@ -41,19 +40,21 @@ export const useSelectedCharacterStore = defineStore({
         const data = await axios.get(`http://127.0.0.1:8000/api/${name}`, {
           headers: { Authorization: `Token ${accountLoginStore.token}` },
         });
-        //this.downloadedCharacter = data.data;
         this.uid_string = data.data.race_uid;
         this.uid = searchUID(this.uid_string);
         this.classname = data.data.character_class;
         this.playerClass = searchClass(this.classname);
         this.faction = data.data.character_faction;
-        this.selectedCharacterName = data.data.character_name;
         this.name = data.data.character_name;
         this.gender = data.data.character_gender;
         this.race = data.data.character_race;
-        this.xp = { currentXP: 258, requiredXP: 400 };
-        this.level = 1;
-        this.money = 200;
+        this.xp = {
+          currentXP: data.data.character_xp,
+          requiredXP: data.data.required_xp,
+        };
+        this.level = data.data.level;
+        this.itemLevel = data.data.item_level;
+        this.money = data.data.character_money;
       } catch (error) {
         console.log(error.response);
       }

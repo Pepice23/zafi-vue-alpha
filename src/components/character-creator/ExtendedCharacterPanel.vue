@@ -51,23 +51,15 @@
     <XPBar :xp="character.xp" />
     <div class="row">
       <div class="col m-1">Level: {{ character.level }}</div>
-      <div class="col m-1">ILevel: {{ character.iLevel }}</div>
+      <div class="col m-1">ILevel: {{ character.itemLevel }}</div>
       <div class="col m-1">Money: {{ character.money }}</div>
-    </div>
-    <div class="row">
-      <div class="col">
-        WPc / MPc: {{ character.wpc }} / {{ character.mpc }}
-      </div>
-      <div class="col">
-        WPs / MPs: {{ character.wps }} / {{ character.mps }}
-      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { useSelectedCharacterStore } from "../../stores/selectedCharacterStore";
-import { searchUID, searchClass } from "../../helpers/utils";
+
 import { ref } from "vue";
 import XPBar from "../XPBar.vue";
 const selectedCharacterStore = useSelectedCharacterStore();
