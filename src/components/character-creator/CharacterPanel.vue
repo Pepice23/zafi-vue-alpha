@@ -86,7 +86,6 @@ const selectCharacter = () => {
 const deleteCharacter = () => {
   selectedCharacterStore.deleteCharacter(props.character.character_name);
   alert("Character deleted");
-  location.reload();
 };
 </script>
 

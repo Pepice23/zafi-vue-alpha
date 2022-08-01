@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import axios from "axios";
 import { searchUID, searchClass } from "../helpers/utils";
 import { useAccountLoginStore } from "./accountLoginStore";
+import { useAllCharactersStore } from "./allCharacterStore";
 
 export const useSelectedCharacterStore = defineStore({
   id: "selectedCharacterStore",
@@ -21,8 +22,15 @@ export const useSelectedCharacterStore = defineStore({
   }),
   actions: {
     async deleteCharacter(name) {
+      const accountLoginStore = useAccountLoginStore();
+      const allCharactersStore = useAllCharactersStore();
       try {
-        await axios.delete(`http://127.0.0.1:8000/api/${name}`);
+        const data = await axios.delete(`http://127.0.0.1:8000/api/${name}`, {
+          headers: { Authorization: `Token ${accountLoginStore.token}` },
+        });
+        if (data.status === 204) {
+          await allCharactersStore.getEveryCharacter();
+        }
       } catch (error) {
         console.log(error.response);
       }
